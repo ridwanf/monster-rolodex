@@ -1,9 +1,14 @@
 import "./index.css";
+import { IMonster } from "../../App";
 
-const Card = (props) => {
-  const { id, name, email } = props.monster;
-  const getRoboImage = (monsterId) => {
-    return `https://robohash.org/${monsterId}?set=set2&size=180x180`;
+interface ICardProps {
+  monster: IMonster;
+}
+
+const Card = ({monster}:ICardProps) => {
+  const { id, name, email } = monster;
+  const getRoboImage = (id: string) => {
+    return `https://robohash.org/${id}?set=set2&size=180x180`;
   };
 
   return (

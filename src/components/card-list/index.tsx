@@ -1,9 +1,11 @@
 import Card from "../card";
 import './index.css'
+import { IMonster } from "../../App";
 
-import React from 'react';
-const CardList = (props) => {
-  const {monsters} = props
+interface ICardListProps {
+  monsters: IMonster[]
+}
+const CardList = ({monsters}: ICardListProps) => {
   return (
     <div className="card-list">
       {monsters.map((monster) => {
